@@ -2,6 +2,7 @@
 <resources>
     <declare-styleable name="SlideToActView">
         <attr name="text" format="string" />
+        <attr name="text2" format="string" />
         <attr name="text_size" format="dimension" />
         <attr name="text_style" format="enum">
             <enum name="normal" value="0" />

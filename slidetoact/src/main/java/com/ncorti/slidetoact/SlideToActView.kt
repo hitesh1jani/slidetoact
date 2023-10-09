@@ -91,6 +91,13 @@ class SlideToActView @JvmOverloads constructor(
             invalidate()
         }
 
+    /** Text message */
+    var text2: CharSequence = ""
+        set(value) {
+            field = value
+            invalidate()
+        }
+
     /** Typeface for the text field */
     var typeFace = Typeface.NORMAL
         set(value) {
@@ -367,6 +374,7 @@ class SlideToActView @JvmOverloads constructor(
                 }
 
                 text = getString(R.styleable.SlideToActView_text) ?: ""
+                text2 = getString(R.styleable.SlideToActView_text2) ?: ""
                 typeFace = getInt(R.styleable.SlideToActView_text_style, 0)
                 mTextSize = getDimensionPixelSize(
                     R.styleable.SlideToActView_text_size,
@@ -549,9 +557,19 @@ class SlideToActView @JvmOverloads constructor(
             0,
             textToDraw.length,
             mTextXPosition,
-            mTextYPosition,
+            mTextYPosition - (if (text2.isNotEmpty()) mTextSize/2 else 0),
             mTextPaint
         )
+        if (text2.isNotEmpty()) {
+            canvas.drawText(
+                text2,
+                0,
+                text2.length,
+                mTextXPosition,
+                mTextYPosition + (mTextSize/2),
+                mTextPaint
+            )
+        }
 
         // Inner Cursor
         // ratio is used to compute the proper border radius for the inner rect (see #8).

@@ -25,7 +25,8 @@
             android:layout_margin="8dp"
             android:elevation="6dp"
             app:bounce_on_start="true"
-            app:text="Sample SlideToActView" />
+            app:text="Sample SlideToActView"
+            app:text2="Second Line"/>
 
         <TextView
             android:layout_width="match_parent"
