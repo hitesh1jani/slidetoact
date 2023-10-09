@@ -557,7 +557,7 @@ class SlideToActView @JvmOverloads constructor(
             0,
             textToDraw.length,
             mTextXPosition,
-            mTextYPosition - (if (text2.isNotEmpty()) mTextSize/2 else 0),
+            mTextYPosition - (if (text2.isNotEmpty()) mTextSize/1.5f else 0f),
             mTextPaint
         )
         if (text2.isNotEmpty()) {
@@ -566,7 +566,7 @@ class SlideToActView @JvmOverloads constructor(
                 0,
                 text2.length,
                 mTextXPosition,
-                mTextYPosition + (mTextSize/2),
+                mTextYPosition + (mTextSize/1.5f),
                 mTextPaint
             )
         }
